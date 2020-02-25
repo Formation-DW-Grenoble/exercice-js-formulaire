@@ -41,3 +41,26 @@ usernameField.onchange = function() {
     usernameError.classList.add('d-none');
   }
 }
+
+
+// Récupère le champ confirmation du mot de passe
+var passwordComfirmField = document.getElementById('password_confirm');
+// Récupère la zone d'erreur de la confirmation du mot de passe
+var passwordComfirmError = document.getElementById('password-confirm-error');
+
+
+// Associe une action au fait de cliquer en-dehors du champ
+passwordComfirmField.onchange = function () {
+  if (passwordComfirmField.value === passwordField.value) {
+    // Modifie le message d'erreur
+    passwordComfirmError.innerText = "";
+    // Rajoute la classe qui rend le message d'erreur invisible
+    passwordComfirmError.classList.add('d-none');
+  // Sinon
+  } else {
+    // Modifie le message d'erreur
+    passwordComfirmError.innerText = "Les mots de passe ne correspondent pas";
+    // Enlève la classe qui rend le message d'erreur invisible
+    passwordComfirmError.classList.remove('d-none');
+  }
+}
