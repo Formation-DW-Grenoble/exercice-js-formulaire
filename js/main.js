@@ -94,6 +94,12 @@ var emailError = document.getElementById('email-error');
 
 // Associe une action au fait de cliquer en-dehors du champ
 emailField.onchange = function () {
+  // Si l'e-mail est conforme à l'expression régulière:
+  // - un (ou plus) caractère autre qu'un espace,
+  // - puis une @,
+  // - puis un (ou plus) caractère autre qu'un espace,
+  // - puis un point,
+  // - puis un (ou plus) caractère autre qu'un espace
   if (emailField.value.match(/\S+@\S+\.\S+/)) {
     // Valide le champ e-mail
     valid['email'] = true;
