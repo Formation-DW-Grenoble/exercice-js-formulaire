@@ -18,6 +18,26 @@ passwordField.onchange = function() {
     passwordError.innerText = "";
     // Rajoute la classe qui rend le message d'erreur invisible
     passwordError.classList.add('d-none');
-    
+  }
+}
+
+// Récupère le champ nom d'utilisateur
+var usernameField = document.getElementById('username');
+// Récupère la zone d'erreur de l'utilisateur
+var usernameError = document.getElementById('username-error');
+
+
+// Associe une action au fait de cliquer en-dehors du champ
+usernameField.onchange = function() {
+  if (usernameField.value.includes(' ')) {
+    // Modifie le message d'erreur
+    usernameError.innerText = "Le nom d'utilisateur ne doit pas contenir d'espace";
+    // Enlève la classe qui rend le message d'erreur invisible
+    usernameError.classList.remove('d-none');
+  } else {
+    // Modifie le message d'erreur
+    usernameError.innerText = "";
+    // Rajoute la classe qui rend le message d'erreur invisible
+    usernameError.classList.add('d-none');
   }
 }
