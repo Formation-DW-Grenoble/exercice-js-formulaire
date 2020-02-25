@@ -64,3 +64,26 @@ passwordComfirmField.onchange = function () {
     passwordComfirmError.classList.remove('d-none');
   }
 }
+
+
+// Récupère le champ e-mail
+var emailField = document.getElementById('email');
+// Récupère la zone d'erreur de l'e-mail
+var emailError = document.getElementById('email-error');
+
+
+// Associe une action au fait de cliquer en-dehors du champ
+emailField.onchange = function () {
+  if (emailField.value.match(/\S+@\S+\.\S+/)) {
+    // Modifie le message d'erreur
+    emailError.innerText = "";
+    // Rajoute la classe qui rend le message d'erreur invisible
+    emailError.classList.add('d-none');
+  // Sinon
+  } else {
+    // Modifie le message d'erreur
+    emailError.innerText = "Il ne s'agit pas d'une adresse e-mail valide";
+    // Enlève la classe qui rend le message d'erreur invisible
+    emailError.classList.remove('d-none');
+  }
+}
